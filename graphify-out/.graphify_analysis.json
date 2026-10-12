@@ -1,0 +1,124 @@
+{
+  "communities": {
+    "0": [
+      "app",
+      "app_formatdue",
+      "app_localdatekey",
+      "app_opentask",
+      "app_render",
+      "app_renderprogress",
+      "app_rendertasks",
+      "app_setfilter",
+      "app_visibletasks"
+    ],
+    "1": [
+      "app_addhabit",
+      "app_renderhabits",
+      "app_save",
+      "app_showtoast"
+    ],
+    "2": [
+      "app_freshstate",
+      "app_load",
+      "app_uid"
+    ]
+  },
+  "cohesion": {
+    "0": 0.4166666666666667,
+    "1": 0.8333333333333334,
+    "2": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "app_rendertasks",
+      "label": "renderTasks()",
+      "degree": 7
+    },
+    {
+      "id": "app_renderhabits",
+      "label": "renderHabits()",
+      "degree": 6
+    },
+    {
+      "id": "app_render",
+      "label": "render()",
+      "degree": 5
+    },
+    {
+      "id": "app_addhabit",
+      "label": "addHabit()",
+      "degree": 5
+    },
+    {
+      "id": "app_save",
+      "label": "save()",
+      "degree": 5
+    },
+    {
+      "id": "app_showtoast",
+      "label": "showToast()",
+      "degree": 5
+    },
+    {
+      "id": "app_renderprogress",
+      "label": "renderProgress()",
+      "degree": 3
+    },
+    {
+      "id": "app_freshstate",
+      "label": "freshState()",
+      "degree": 3
+    },
+    {
+      "id": "app_load",
+      "label": "load()",
+      "degree": 3
+    },
+    {
+      "id": "app_uid",
+      "label": "uid()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "render()",
+      "target": "renderHabits()",
+      "source_files": [
+        "app.js",
+        "app.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 0 → community 1"
+    },
+    {
+      "source": "addHabit()",
+      "target": "uid()",
+      "source_files": [
+        "app.js",
+        "app.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 1 → community 2"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `renderTasks()` connect `Community 0` to `Community 1`?",
+      "why": "High betweenness centrality (0.065) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `render()` connect `Community 0` to `Community 1`?",
+      "why": "High betweenness centrality (0.027) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `addHabit()` connect `Community 1` to `Community 0`, `Community 2`?",
+      "why": "High betweenness centrality (0.017) - this node is a cross-community bridge."
+    }
+  ]
+}

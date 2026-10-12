@@ -1,0 +1,14 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1791787110.8910239,
+    "seen": 1791787111.2111888,
+    "ast_hash": "005ac71c84af2cae38e255e2b9de2411",
+    "semantic_hash": "005ac71c84af2cae38e255e2b9de2411"
+  },
+  "app.js": {
+    "mtime": 1791786754.2128465,
+    "seen": 1791787111.2111924,
+    "ast_hash": "afd432baeae19fe09fa3164140426968",
+    "semantic_hash": "afd432baeae19fe09fa3164140426968"
+  }
+}

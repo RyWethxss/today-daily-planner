@@ -20,6 +20,7 @@ A calm, lightweight daily planner for tasks, habits, and quick notes — right i
 - [How to use](#how-to-use)
 - [Privacy and data](#privacy-and-data)
 - [Project structure](#project-structure)
+- [Codebase map with Graphify](#codebase-map-with-graphify)
 - [Accessibility and browser support](#accessibility-and-browser-support)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
@@ -113,6 +114,20 @@ Tasks, habits, and notes are stored in your browser's `localStorage` under the `
 | `app.js` | App state, interactions, rendering, and `localStorage` persistence |
 
 The app has no framework. It builds interface elements with the DOM API and renders user-provided text as text content.
+
+## Codebase map with Graphify
+
+This repository includes a local Graphify skill and a generated code map in `graphify-out/`. The map records code symbols and their relationships so an AI coding assistant can retrieve a small, relevant part of the codebase instead of repeatedly loading every source file.
+
+The current map covers the JavaScript application logic. Graphify's parser does not currently extract this project's HTML or CSS files, so treat the map as a navigation aid rather than a complete representation of the interface.
+
+To refresh the code map after changing JavaScript:
+
+```bash
+graphify update .
+```
+
+In Codex, use `$graphify .` to rebuild it, then ask focused questions with `$graphify query "How are tasks saved?"`. Code parsing and graph queries run locally without an LLM API call.
 
 ## Accessibility and browser support
 
