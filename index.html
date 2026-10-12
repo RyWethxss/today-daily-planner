@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Bugün — Günlük kontrol paneli</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Ana menü">
+      <a class="brand" href="#" aria-label="Bugün ana sayfa"><span class="brand-mark">b.</span><span>bugün<span class="brand-dot">.</span></span></a>
+      <p class="nav-caption">ÇALIŞMA ALANI</p>
+      <nav class="nav-list">
+        <button class="nav-item active" data-filter="today"><span class="nav-icon">◷</span> Bugün <span class="nav-count" id="todayCount">0</span></button>
+        <button class="nav-item" data-filter="upcoming"><span class="nav-icon">▦</span> Yaklaşan</button>
+        <button class="nav-item" data-filter="completed"><span class="nav-icon">✓</span> Tamamlanan</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="side-note-icon">✳</div><p>Her küçük adım,<br><strong>iyi bir gündür.</strong></p><span>Bugün kendine iyi bak.</span></div>
+      <div class="side-footer"><span class="status-dot"></span> Verilerin bu cihazda saklanır</div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><span class="breadcrumb">Kişisel alan <span>/</span> <strong id="breadcrumbTitle">Bugün</strong></span><span class="local-badge"><span class="status-dot"></span> Kişisel çalışma alanın</span></header>
+      <div class="content-wrap">
+        <section class="welcome-row">
+          <div><p class="date-label" id="dateLabel"></p><h1 id="pageTitle">Güne merhaba<span class="wave"> ✳</span></h1><p class="welcome-subtitle" id="subtitle">Bugün için küçük bir plan, büyük bir fark yaratabilir.</p></div>
+          <button class="button button-primary add-task-top" id="addTaskTop"><span>＋</span> Görev ekle</button>
+        </section>
+
+        <section class="progress-card" aria-label="Günlük ilerleme">
+          <div class="progress-copy"><div class="progress-icon">✦</div><div><p class="eyebrow">GÜNÜN İLERLEMESİ</p><h2 id="progressText">Güzel bir başlangıç yapabilirsin</h2><p id="progressDetail">Bir görev ekleyerek gününü şekillendir.</p></div></div>
+          <div class="progress-visual"><div class="progress-ring" id="progressRing" role="img" aria-label="Tamamlanma yüzde 0"><div><strong id="progressPercent">0%</strong><span>tamamlandı</span></div></div></div>
+          <div class="progress-meta"><span><i class="legend-dot done-dot"></i> Tamamlandı <strong id="doneCount">0</strong></span><span><i class="legend-dot todo-dot"></i> Kalan <strong id="remainingCount">0</strong></span></div>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="panel tasks-panel">
+            <div class="panel-heading"><div><div class="title-line"><h2 id="taskHeading">Görevlerin</h2><span class="soft-count" id="taskTotal">0</span></div><p id="taskDescription">Aklındakileri sıraya koy.</p></div><button class="icon-button" id="moreTasks" aria-label="Görev seçenekleri" title="Tamamlanan görevleri temizle">···</button></div>
+            <div class="filter-tabs" role="tablist" aria-label="Görev filtreleri"><button class="filter-tab selected" data-filter="today" role="tab" aria-selected="true">Bugün</button><button class="filter-tab" data-filter="upcoming" role="tab" aria-selected="false">Yaklaşan</button><button class="filter-tab" data-filter="completed" role="tab" aria-selected="false">Tamamlanan</button></div>
+            <div id="taskList" class="task-list" aria-live="polite"></div>
+            <button class="add-task-inline" id="addTaskInline"><span>＋</span> Yeni görev ekle</button>
+          </section>
+
+          <section class="panel habits-panel"><div class="panel-heading"><div><div class="title-line"><h2>Küçük alışkanlıklar</h2><span class="soft-count" id="habitProgress">0/0</span></div><p>Her gün, kendin için küçük bir şey.</p></div><button class="icon-button" id="addHabit" aria-label="Alışkanlık ekle" title="Alışkanlık ekle">＋</button></div><div class="habit-list" id="habitList"></div><button class="text-action" id="addHabitText">＋ Alışkanlık ekle</button></section>
+
+          <section class="panel notes-panel"><div class="panel-heading"><div><div class="title-line"><h2>Hızlı notlar</h2><span class="note-saved" id="noteStatus">Kaydedildi</span></div><p>Aklından geçenleri buraya bırak.</p></div><span class="note-icon">✎</span></div><label class="sr-only" for="quickNote">Hızlı notlar</label><textarea id="quickNote" maxlength="2000" placeholder="Bir fikir, hatırlatma ya da sadece aklından geçenler…"></textarea><div class="note-footer"><span>Notların otomatik kaydedilir</span><span id="noteCount">0 / 2000</span></div></section>
+        </div>
+        <footer class="page-footer"><span>Yavaşla, nefes al, devam et.</span><span>✳ &nbsp;Bugün senin günün.</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="taskDialog" class="task-dialog"><form id="taskForm"><div class="dialog-header"><div><p class="eyebrow">GÜNÜNÜ PLANLA</p><h2 id="dialogTitle">Yeni görev</h2></div><button type="button" class="icon-button close-dialog" aria-label="Pencereyi kapat">×</button></div><label class="field-label" for="taskName">Görev adı</label><input id="taskName" name="title" maxlength="120" placeholder="Örn. Kitabımı okumak" required><div class="field-row"><div><label class="field-label" for="taskPriority">Öncelik</label><select id="taskPriority" name="priority"><option value="low">Düşük</option><option value="medium" selected>Normal</option><option value="high">Yüksek</option></select></div><div><label class="field-label" for="taskDue">Son tarih <span>(isteğe bağlı)</span></label><input type="date" id="taskDue" name="due"></div></div><div class="dialog-actions"><button type="button" class="button button-quiet" id="cancelTask">Vazgeç</button><button class="button button-primary" type="submit" id="saveTask">Görevi ekle</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
