@@ -1,137 +1,137 @@
 <div align="center">
 
-# bugün.
+# today.
 
-### Gününü sadeleştir. Küçük adımlarla ilerle.
+### Plan your day. Make progress one small step at a time.
 
-Türkçe, kişisel günlük planlama paneli. Görevlerini sıraya koy, alışkanlıklarını takip et, aklındaki notları kaydet — hepsi tek ekranda ve doğrudan tarayıcında.
+A calm, lightweight daily planner for tasks, habits, and quick notes — right in your browser.
 
-**Kurulum yok · Bağımlılık yok · Hesap yok · Veriler cihazında**
+**No setup · No dependencies · No account · Your data stays on your device**
 
 </div>
 
 ---
 
-## İçindekiler
+## Contents
 
-- [Projeye genel bakış](#projeye-genel-bakış)
-- [Özellikler](#özellikler)
-- [Hemen başla](#hemen-başla)
-- [Nasıl kullanılır?](#nasıl-kullanılır)
-- [Veri ve gizlilik](#veri-ve-gizlilik)
-- [Teknik yapı](#teknik-yapı)
-- [Erişilebilirlik ve uyumluluk](#erişilebilirlik-ve-uyumluluk)
-- [Sorun giderme](#sorun-giderme)
-- [Geliştirme ve katkı](#geliştirme-ve-katkı)
-- [Lisans](#lisans)
+- [Overview](#overview)
+- [Features](#features)
+- [Get started](#get-started)
+- [How to use](#how-to-use)
+- [Privacy and data](#privacy-and-data)
+- [Project structure](#project-structure)
+- [Accessibility and browser support](#accessibility-and-browser-support)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Projeye genel bakış
+## Overview
 
-**bugün.**, yapılacaklar listesini, günlük alışkanlıkları ve hızlı notları tek bir sakin kontrol panelinde birleştiren hafif bir web uygulamasıdır. Arayüz Türkçe tasarlanmıştır; uygulama statik HTML, CSS ve JavaScript dosyalarından oluşur. Bir paket yöneticisi, derleme adımı, sunucu tarafı veya üçüncü taraf servis gerekmez.
+**today.** brings your to-do list, daily habits, and quick notes together in one focused dashboard. It is built with plain HTML, CSS, and JavaScript, so there is no package manager, build step, backend, or third-party service to set up.
 
-Bu proje özellikle gününü basitçe planlamak ve verilerini kendi tarayıcısında tutmak isteyen kişiler için hazırlandı.
+The app is designed for anyone who wants a simple way to plan the day while keeping personal data in their own browser.
 
-## Özellikler
+## Features
 
-### Görevler
+### Tasks
 
-- Görev ekleme, düzenleme, tamamlama ve silme
-- Düşük, normal ve yüksek öncelik seçimi
-- İsteğe bağlı son tarih
-- **Bugün**, **Yaklaşan** ve **Tamamlanan** görünümleri
-- Günlük tamamlanma oranı ve ilerleme göstergesi
-- Tamamlanmış görevleri topluca temizleme
+- Add, edit, complete, and delete tasks
+- Set low, medium, or high priority
+- Add an optional due date
+- Filter tasks by **Today**, **Upcoming**, and **Completed**
+- See daily completion progress at a glance
+- Clear completed tasks in one action
 
-### Alışkanlıklar
+### Habits
 
-- Günlük alışkanlıkları tek dokunuşla işaretleme
-- Kendi alışkanlıklarını ekleme ve kaldırma
-- Günlük tamamlanma sayacı
+- Check off daily habits with one click
+- Add and remove your own habits
+- Track today's completion count
 
-### Hızlı notlar
+### Quick notes
 
-- Yazarken otomatik kaydetme
-- 2.000 karakterlik not alanı ve canlı karakter sayacı
+- Notes save automatically as you type
+- 2,000-character limit with a live character count
 
-### Kullanım deneyimi
+### Experience
 
-- Telefon, tablet ve masaüstüne uyumlu düzen
-- Klavye ile erişilebilir kontroller ve görünür odak durumları
-- Azaltılmış hareket tercihini dikkate alan arayüz
-- Türkçe tarih ve saat gösterimi
-- Harici font, görsel veya JavaScript kütüphanesi gerektirmeyen yalın yapı
+- Responsive layout for phones, tablets, and desktops
+- Keyboard-friendly controls with visible focus states
+- Respects the reduced-motion preference
+- English date and time formatting
+- No external fonts, images, or JavaScript libraries
 
-## Hemen başla
+## Get started
 
-### Gereksinimler
+### Requirements
 
-- Güncel bir web tarayıcısı
-- Yerel sunucu kullanmak için Python 3 (isteğe bağlı)
+- A modern web browser
+- Python 3 for the optional local server
 
-### Seçenek 1: Dosyayı doğrudan aç
+### Option 1: Open the file
 
-`index.html` dosyasını tarayıcında aç. Uygulama çoğu modern tarayıcıda sunucu olmadan çalışır.
+Open `index.html` in your browser. The app works in most modern browsers without a server.
 
-### Seçenek 2: Yerel web sunucusu
+### Option 2: Run a local web server
 
-Proje klasöründe terminal aç ve çalıştır:
+Open a terminal in the project directory and run:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Ardından tarayıcıda [http://localhost:4173](http://localhost:4173) adresini aç. Sunucuyu durdurmak için terminalde `Ctrl+C` tuşlarına bas.
+Then visit [http://localhost:4173](http://localhost:4173). Press `Ctrl+C` in the terminal to stop the server.
 
-> Python kullanmıyorsan Node.js ile `npx serve .` komutunu da çalıştırabilirsin. Bu seçenek `serve` paketini indirmek için internet bağlantısı gerektirebilir.
+> If you prefer Node.js, you can run `npx serve .`. This option may download the `serve` package and require an internet connection.
 
-## Nasıl kullanılır?
+## How to use
 
-1. **Görev ekle** düğmesiyle görevini oluştur.
-2. İstersen öncelik ve son tarih belirle.
-3. Görevleri tamamladıkça işaretle; günlük ilerleme otomatik güncellenir.
-4. Sağdaki **Küçük alışkanlıklar** bölümünde günlük rutinlerini takip et.
-5. **Hızlı notlar** alanına fikirlerini yaz; değişiklikler kısa bir beklemeden sonra kaydedilir.
+1. Select **Add task** to create a task.
+2. Optionally set its priority and due date.
+3. Check tasks off as you complete them; daily progress updates automatically.
+4. Track your routines in **Small habits**.
+5. Write ideas in **Quick notes**; changes are saved shortly after you stop typing.
 
-## Veri ve gizlilik
+## Privacy and data
 
-Görevler, alışkanlıklar ve notlar `bugun-panel-v1` anahtarı altında tarayıcının `localStorage` alanında tutulur.
+Tasks, habits, and notes are stored in your browser's `localStorage` under the `bugun-panel-v1` key.
 
-- İçerikler bu uygulama tarafından herhangi bir sunucuya gönderilmez.
-- Uygulama analiz, reklam veya izleme servisi içermez.
-- Veriler aynı tarayıcı ve cihazda kalır; farklı cihazlarla otomatik eşitlenmez.
-- Tarayıcı verilerini/site verilerini temizlemek bu uygulamanın kayıtlarını da siler.
-- Gizli gezinme pencereleri veya sıkı depolama kısıtları kayıtların kalıcılığını etkileyebilir.
+- This app does not send your content to a server.
+- It does not include analytics, advertising, or tracking services.
+- Data stays in the same browser and on the same device; it is not synced across devices.
+- Clearing browser or site data also removes this app's saved data.
+- Private browsing and strict storage settings may affect how long data persists.
 
-**Yedekleme:** Şu an uygulama içinde dışa/içe aktarma özelliği yoktur. Kalıcı kayıt olarak yalnızca tarayıcı depolamasına güveniyorsan tarayıcı/site verilerini temizlemeden önce bunu göz önünde bulundur.
+**Backups:** The app does not currently include import or export. Keep in mind that browser storage can be removed when clearing site data.
 
-## Teknik yapı
+## Project structure
 
-| Dosya | Sorumluluk |
+| File | Purpose |
 | --- | --- |
-| `index.html` | Sayfa iskeleti, görev formu ve panel bölümleri |
-| `style.css` | Görsel tasarım, responsive düzen ve hareket tercihleri |
-| `app.js` | Uygulama durumu, etkileşimler, çizim ve `localStorage` |
+| `index.html` | Page structure, task form, and dashboard sections |
+| `style.css` | Visual design, responsive layout, and motion preferences |
+| `app.js` | App state, interactions, rendering, and `localStorage` persistence |
 
-Uygulama framework kullanmaz. Arayüz öğeleri DOM API ile oluşturulur; kullanıcı metinleri HTML olarak yorumlanmak yerine metin içeriği şeklinde işlenir.
+The app has no framework. It builds interface elements with the DOM API and renders user-provided text as text content.
 
-## Erişilebilirlik ve uyumluluk
+## Accessibility and browser support
 
-Arayüz semantik HTML, etiketli form alanları, klavye odağı, durum duyuruları ve azaltılmış hareket ayarını kullanır. Yerel `<dialog>`, `localStorage`, CSS Grid ve `conic-gradient` desteği bulunan güncel tarayıcılar hedeflenmiştir.
+The interface uses semantic HTML, labeled form controls, keyboard focus states, live status announcements, and reduced-motion preferences. It targets current browsers with support for native `<dialog>`, `localStorage`, CSS Grid, and `conic-gradient`.
 
-## Sorun giderme
+## Troubleshooting
 
-**Görevlerim görünmüyor.** Aynı tarayıcı profilini ve cihazı kullandığını kontrol et. Tarayıcı/site verileri temizlendiyse yerel kayıtlar silinmiş olabilir.
+**My tasks are missing.** Make sure you are using the same browser profile and device. Local data may have been removed if browser or site data was cleared.
 
-**Veriler kaydedilmiyor.** Tarayıcının site verisi saklamasına izin verildiğini ve depolama alanının dolu olmadığını kontrol et. `file://` üzerinden açmak yerine yukarıdaki yerel sunucu yöntemini dene.
+**Changes are not being saved.** Check that your browser allows site storage and has available space. If opening the app with `file://` does not work, try the local server instructions above.
 
-**Sayfa stilleri görünmüyor.** `index.html`, `style.css` ve `app.js` aynı proje klasöründe bulunmalı; sunucu komutunu proje klasöründe çalıştırmalısın.
+**The page has no styling.** Keep `index.html`, `style.css`, and `app.js` in the same project directory, and start the server from that directory.
 
-## Geliştirme ve katkı
+## Contributing
 
-Uygulamanın bir derleme veya test komutu yoktur. Değişiklikleri yerel sunucuda açarak tarayıcıda kontrol edebilirsin. Katkı göndereceksen değişikliği küçük ve odaklı tut; arayüz metinlerinin Türkçe kalmasına, küçük ekranlara ve klavye kullanımına dikkat et.
+There is no build or test command. You can review changes by opening the app in a browser with the local server. Please keep contributions focused and consider small screens, keyboard navigation, and clear English interface copy.
 
-Öneri veya hata bildirimi için GitHub’da bir [Issue](../../issues) açabilirsin.
+For ideas or bug reports, open a [GitHub issue](../../issues).
 
-## Lisans
+## License
 
-Bu depoda henüz bir lisans dosyası bulunmuyor. Açık kaynak kullanım, değiştirme ve dağıtım koşulları için bir lisans eklenene kadar varsayımda bulunma.
+This repository does not include a license file yet. Until a license is added, no permission to use, modify, or distribute this software should be assumed.
